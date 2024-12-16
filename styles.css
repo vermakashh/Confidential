@@ -208,6 +208,55 @@ video {
   margin-bottom:15px ;
 }
 
+/* Banner above the footer */
+
+.footer-banner {
+  position: relative; /* Create positioning context */
+  width: 100%;
+  height: 600px; /* Adjust height as needed */
+  overflow: hidden;
+}
+
+.footer-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain image proportions and cover the container */
+}
+
+.footer-banner-content {
+  position: absolute; /* Position the content over the image */
+  bottom: 20px; /* Distance from the bottom of the image */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center perfectly */
+  text-align: center; /* Align content center */
+  color: white; /* Text color for visibility */
+  z-index: 10; /* Ensure content is above the image */
+}
+
+.footer-heading {
+  font-size: 3rem; /* Adjust text size */
+  font-weight: bold;
+  margin-bottom: 15px; /* Space between heading and button */
+  text-transform: uppercase;
+}
+
+.footer-button {
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  color: white;
+  border: 2px solid white; /* Border for button */
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.footer-button:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
 /* Footer Styling */
 .footer {
   background-color: rgb(255, 255, 255);
