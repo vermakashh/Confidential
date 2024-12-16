@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Poppins' , Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
   color: #333;
@@ -107,6 +107,7 @@ video {
   grid-template-columns: repeat(3, 1fr); /* Three products per row */
   gap: 20px;
   margin-top: 0; /* No gap between video and products */
+  
 }
 
 .product {
@@ -119,6 +120,7 @@ video {
   flex-direction: column;
   justify-content: space-between;
   height: 700px; /* Uniform height for all products */
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .product:hover {
@@ -241,6 +243,7 @@ video {
   width: 100%;
   height: 600px; /* Adjust height as needed */
   overflow: hidden;
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .footer-banner img {
@@ -288,7 +291,7 @@ video {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   padding: 40px 20px;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
 
    /* Thin line above the footer */
    border-top: 1px solid #ccc; /* Adjust the color and thickness as needed */
