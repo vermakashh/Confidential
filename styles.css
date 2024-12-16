@@ -208,6 +208,32 @@ video {
   margin-bottom:15px ;
 }
 
+/* Container for Two Images */
+.image-pair-container {
+  display: flex; /* Align items side by side */
+  justify-content: center; /* Center the images horizontally */
+  align-items: center; /* Align images vertically */
+  gap: 0; /* Remove any gap between images */
+  width: 100%;
+  margin: 0 auto; /* Center the container */
+  overflow: hidden; /* Ensure no overflow */
+}
+
+/* Individual Image Box */
+.image-box {
+  flex: 1; /* Equal width for both images */
+  max-width: 50%; /* Each image takes 50% width */
+  height: 960px; /* Set height to match image dimensions */
+  overflow: hidden; /* Ensure no content spills out */
+}
+
+.image-box img {
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
+  object-fit: cover; /* Maintain aspect ratio while covering */
+}
+
+
 /* Banner above the footer */
 
 .footer-banner {
