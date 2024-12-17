@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Poppins' , Arial, sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
   color: #333;
@@ -18,7 +18,7 @@ body {
 
 
 .hero {
-  background-image: url('https://via.placeholder.com/1920x800');
+  background-image: url('images/DSC01354.JPG');
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -95,7 +95,76 @@ video {
   letter-spacing: 80px;
 }
 
+.sepration{
+  height: 33vh;
+  position: relative;
+  z-index: 20;    
+     
+}
 
+.sepration>:nth-child(1){
+  font-family: martel sans;
+  font-size: 26px;
+  font-weight: bolder; 
+  display: flex;
+  justify-content: center;
+}
+
+.food{
+
+  height: 25vh;
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+ /* Custom carousel container */
+ .carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: auto;
+}
+
+/* Carousel wrapper for sliding */
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* Each product card */
+.product-card {
+  flex: 0 0 20%; /* 20% width = 5 items per row */
+  padding: 10px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Navigation buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
+}
 
 
 /* Product Section */
@@ -107,7 +176,6 @@ video {
   grid-template-columns: repeat(3, 1fr); /* Three products per row */
   gap: 20px;
   margin-top: 0; /* No gap between video and products */
-  
 }
 
 .product {
@@ -120,7 +188,6 @@ video {
   flex-direction: column;
   justify-content: space-between;
   height: 700px; /* Uniform height for all products */
-  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .product:hover {
@@ -210,6 +277,7 @@ video {
   margin-bottom:15px ;
 }
 
+
 /* Container for Two Images */
 .image-pair-container {
   display: flex; /* Align items side by side */
@@ -234,7 +302,6 @@ video {
   height: 100%; /* Full height of the container */
   object-fit: cover; /* Maintain aspect ratio while covering */
 }
-
 
 /* Banner above the footer */
 
@@ -286,12 +353,14 @@ video {
   cursor: pointer;
 }
 
+
+
 /* Footer Styling */
 .footer {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   padding: 40px 20px;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: Arial, sans-serif;
 
    /* Thin line above the footer */
    border-top: 1px solid #ccc; /* Adjust the color and thickness as needed */
@@ -388,3 +457,5 @@ video {
 .social-icons a:hover {
   color: #cb5835;
 }
+
+

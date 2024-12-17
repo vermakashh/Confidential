@@ -46,3 +46,41 @@ gsap.from(".product-card", {
   ease: "power2.out", // Smooth easing effect
   stagger: 0.2, // Add a delay between each product card animation
 });
+
+
+// const carouselWrapper = document.getElementById("carouselWrapper");
+//   const prevBtn = document.getElementById("prevBtn");
+//   const nextBtn = document.getElementById("nextBtn");
+
+//   let currentIndex = 0;
+//   const totalItems = document.querySelectorAll(".product-card").length;
+//   const itemsPerView = 5;
+
+//   // Calculate max index for sliding
+//   const maxIndex = totalItems - itemsPerView;
+
+//   // Move to next items
+//   nextBtn.addEventListener("click", () => {
+//     if (currentIndex < maxIndex) {
+//       currentIndex++;
+//     } else {
+//       currentIndex = 0; // Loop back to start
+//     }
+//     updateCarousel();
+//   });
+
+//   // Move to previous items
+//   prevBtn.addEventListener("click", () => {
+//     if (currentIndex > 0) {
+//       currentIndex--;
+//     } else {
+//       currentIndex = maxIndex; // Loop to the end
+//     }
+//     updateCarousel();
+//   });
+
+//   // Update carousel position
+//   function updateCarousel() {
+//     const translateX = -currentIndex * (100 / itemsPerView);
+//     carouselWrapper.style.transform = `translateX(${translateX}%)`;
+//   }
