@@ -388,7 +388,114 @@ productCards.forEach((img) => {
       </div>
     </div>
   </footer>
-  
+
+
+ <!-- Login/Signup Modal -->
+<div id="loginModal" class="modal-overlay">
+  <div class="modal-container">
+    <div class="modal-content">
+      <div class="form-container">
+        <div class="form-toggle">
+          <button id="loginToggle" class="active">Login</button>
+          <button id="signupToggle">Sign Up</button>
+          <button id="closeModalBtn">Close</button>
+        </div>
+        
+        <!-- Login Form -->
+        <form id="loginForm" class="form active">
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Password" required>
+          <button type="submit">Login</button>
+          <p class="forgot-password">Forgot Password?</p>
+        </form>
+        
+        <!-- Signup Form -->
+        <form id="signupForm" class="form">
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Password" required>
+          <input type="password" placeholder="Confirm Password" required>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script>
+    // Ensure the DOM is fully loaded before running the script
+document.addEventListener('DOMContentLoaded', () => {
+  // Select modal and buttons
+  const loginModal = document.getElementById('loginModal'); // Make sure the ID matches your HTML
+  const closeModalBtn = document.getElementById('closeModalBtn'); // Make sure the ID matches your HTML
+  const loginToggle = document.getElementById('loginToggle'); // Make sure the ID matches your HTML
+  const signupToggle = document.getElementById('signupToggle'); // Make sure the ID matches your HTML
+  const loginForm = document.getElementById('loginForm'); // Make sure the ID matches your HTML
+  const signupForm = document.getElementById('signupForm'); // Make sure the ID matches your HTML
+
+  // Show modal after 5 seconds
+  setTimeout(() => {
+    if (loginModal) {
+      loginModal.style.display = 'flex';
+    } else {
+      console.error('loginModal element not found!');
+    }
+  }, 5000);
+
+  // Close modal
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', () => {
+      if (loginModal) {
+        loginModal.style.display = 'none';
+      } else {
+        console.error('loginModal element not found!');
+      }
+    });
+  } else {
+    console.error('closeModalBtn element not found!');
+  }
+
+  // Toggle between login and signup
+  if (loginToggle && signupToggle && loginForm && signupForm) {
+    loginToggle.addEventListener('click', () => {
+      loginToggle.classList.add('active');
+      signupToggle.classList.remove('active');
+      loginForm.classList.add('active');
+      signupForm.classList.remove('active');
+    });
+
+    signupToggle.addEventListener('click', () => {
+      signupToggle.classList.add('active');
+      loginToggle.classList.remove('active');
+      signupForm.classList.add('active');
+      loginForm.classList.remove('active');
+    });
+  } else {
+    console.error('One or more elements related to toggle functionality are missing!');
+  }
+
+  // Form submission (you'll want to replace these with actual authentication logic)
+  if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Login functionality to be implemented');
+    });
+  } else {
+    console.error('loginForm element not found!');
+  }
+
+  if (signupForm) {
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Signup functionality to be implemented');
+    });
+  } else {
+    console.error('signupForm element not found!');
+  }
+});
+
+  </script>
+
   <!-- Scripts -->
   <script>
     // Load navbar dynamically
