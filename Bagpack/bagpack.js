@@ -21,6 +21,9 @@ document.querySelectorAll('.product-item').forEach((item) => {
     // Start switching images when the mouse enters the image of this product
     productImage.addEventListener('mouseenter', () => {
         if (images.length > 1) {
+            // Enable transition when hovering
+            productImage.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease'; 
+
             imageSwitchInterval = setInterval(() => {
                 currentImageIndex = (currentImageIndex + 1) % images.length;
                 productImage.src = images[currentImageIndex]; // Change only the hovered product's image
@@ -32,5 +35,8 @@ document.querySelectorAll('.product-item').forEach((item) => {
     productImage.addEventListener('mouseleave', () => {
         clearInterval(imageSwitchInterval); // Stop the image switch when mouse leaves
         productImage.src = images[0]; // Reset to the first image when the mouse leaves
+
+        // Disable transition when no longer hovering
+        productImage.style.transition = 'none'; 
     });
 });
