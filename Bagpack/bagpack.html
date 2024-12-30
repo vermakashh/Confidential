@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="bagpack.css">
 </head>
 <body>
+      <!-- Dynamic Navbar -->
+  <div id="navbar-placeholder"></div>
+
     <div class="breadcrumb">
         <span>Men</span> / <span>Bags</span> / <span>Backpacks</span>
     </div>
@@ -65,5 +68,18 @@
             <p>$1,950</p>
         </div>
     </div>
+
+ <!-- Scripts -->
+  <script>
+    // Load navbar dynamically
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("navbar/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("navbar-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading navbar:", error));
+    });
+  </script>
 </body>
 </html>
