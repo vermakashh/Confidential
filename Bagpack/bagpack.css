@@ -88,13 +88,13 @@ header h1 {
 }
 
 .product-item h3 {
-    font-size: 20px;
-    margin: 5px 0;
-    font-weight: normal;
+    font-size: 15px;
+    margin: 3px 0;
+    font-weight: bold;
 }
 
 .product-item p {
-    font-size: 15px;
+    font-size: 13px;
     color: #666;
 }
 
