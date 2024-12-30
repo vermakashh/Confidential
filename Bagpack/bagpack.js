@@ -11,7 +11,7 @@ function addToFavorites(event) {
     }
 }
 
-// Switch product images on hover for each individual product
+// Switch product images on hover - Only for the hovered product
 document.querySelectorAll('.product-item').forEach((item) => {
     const images = item.getAttribute('data-images') ? item.getAttribute('data-images').split(',') : [];
     let currentImageIndex = 0;
@@ -26,16 +26,15 @@ document.querySelectorAll('.product-item').forEach((item) => {
         }
     }
 
-    // Start switching images when the mouse enters this specific product item
-    item.addEventListener('mouseenter', function () {
+    // Start switching images when the mouse enters
+    item.addEventListener('mouseenter', () => {
         if (images.length > 1) {
-            // Switch images for the hovered product
             imageSwitchInterval = setInterval(switchImage, 1000); // Switch every 1 second
         }
     });
 
-    // Stop switching images when the mouse leaves this specific product item
-    item.addEventListener('mouseleave', function () {
-        clearInterval(imageSwitchInterval); // Stop image switching when mouse leaves
+    // Stop switching images when the mouse leaves
+    item.addEventListener('mouseleave', () => {
+        clearInterval(imageSwitchInterval);
     });
 });
