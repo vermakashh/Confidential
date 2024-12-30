@@ -27,14 +27,14 @@ document.querySelectorAll('.product-item').forEach((item) => {
     }
 
     // Start switching images when the mouse enters
-    item.addEventListener('mouseenter', () => {
+    item.addEventListener('mouseenter', function () {
         if (images.length > 1) {
             imageSwitchInterval = setInterval(switchImage, 1000); // Switch every 1 second
         }
     });
 
     // Stop switching images when the mouse leaves
-    item.addEventListener('mouseleave', () => {
+    item.addEventListener('mouseleave', function () {
         clearInterval(imageSwitchInterval);
     });
 });
