@@ -1,31 +1,36 @@
-// Navigate to product page
-function navigateToProduct(url) {
-    window.location.href = url;
-}
-
-// Add to favorites
+// Add product to favorites when the heart icon is clicked
 function addToFavorites(event) {
-    event.stopPropagation(); // Prevent triggering parent click
-    alert("Added to favorites!");
+    event.stopPropagation();  // Prevent the click from propagating to the product image link
+    const heartIcon = event.target;
+    
+    // Toggle the heart icon's filled state
+    if (heartIcon.innerText === "favorite_border") {
+        heartIcon.innerText = "favorite";  // Change to filled heart
+    } else {
+        heartIcon.innerText = "favorite_border";  // Change to empty heart
+    }
 }
 
-// Rotate images on hover
-const products = document.querySelectorAll('.product-item');
-
-products.forEach(product => {
-    const images = ['../Bags/product3.jpg', '../Bags/product5.jpg', '../Bags/product6.jpg'];
+// Rotate product images on hover (for rotation effect)
+document.querySelectorAll('.product-item').forEach((item) => {
+    const images = item.getAttribute('data-images').split(',');
     let currentImageIndex = 0;
-    let interval;
 
-    product.addEventListener('mouseenter', () => {
-        const img = product.querySelector('.product-image');
-        interval = setInterval(() => {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            img.src = images[currentImageIndex];
-        }, 1000);
+    const productImage = item.querySelector('.product-image');
+
+    // Function to change the image
+    function rotateImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        productImage.src = images[currentImageIndex];
+    }
+
+    // Rotate the image every 3 seconds when hovered
+    item.addEventListener('mouseenter', () => {
+        setInterval(rotateImage, 3000);
     });
 
-    product.addEventListener('mouseleave', () => {
-        clearInterval(interval);
+    // Stop rotating when mouse leaves
+    item.addEventListener('mouseleave', () => {
+        clearInterval();
     });
 });
