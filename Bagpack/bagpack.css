@@ -1,0 +1,99 @@
+/* General reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #666;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ccc;
+}
+
+.breadcrumb span {
+    margin-right: 5px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+header h1 {
+    font-size: 28px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.filters button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.filters button:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown-btn {
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    background-color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.product-item {
+    text-align: center;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.product-item h3 {
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: normal;
+}
+
+.product-item p {
+    font-size: 14px;
+    color: #666;
+}
