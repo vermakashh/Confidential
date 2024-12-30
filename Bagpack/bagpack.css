@@ -109,6 +109,17 @@ header h1 {
     color: #666;
 }
 
+/* Add this CSS to control the transition behavior */
+.product-image {
+    transition: none;  /* Disable transition by default */
+}
+
+/* Enable transition only on hover */
+.product-item:hover .product-image {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+}
+
+
 /* Ensure product image is visible and accessible */
 .product-image {
     display: block;
