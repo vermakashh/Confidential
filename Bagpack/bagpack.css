@@ -98,6 +98,47 @@ header h1 {
     color: #666;
 }
 
+/* Heart Icon */
+.heart-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.heart-icon:hover {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+/* Rotation Effect for Images */
+.image-container:hover .product-image {
+    animation: rotateImages 10s infinite;
+}
+
+@keyframes rotateImages {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 /* Footer Styling */
 .footer {
