@@ -4,38 +4,37 @@ function addToFavorites(event) {
     const heartIcon = event.target;
 
     // Toggle the heart icon's filled state
-    heartIcon.innerText = heartIcon.innerText === "favorite_border" ? "favorite" : "favorite_border";
+    if (heartIcon.innerText === "favorite_border") {
+        heartIcon.innerText = "favorite"; // Change to filled heart
+    } else {
+        heartIcon.innerText = "favorite_border"; // Change to empty heart
+    }
 }
 
-// Rotate product images on hover (for rotation effect)
+// Switch product images on hover
 document.querySelectorAll('.product-item').forEach((item) => {
     const images = item.getAttribute('data-images') ? item.getAttribute('data-images').split(',') : [];
     let currentImageIndex = 0;
     const productImage = item.querySelector('.product-image');
-    let rotationInterval;
+    let imageSwitchInterval;
 
-    // Function to change the image
-    function rotateImage() {
+    // Function to switch the image
+    function switchImage() {
         if (images.length > 1) {
             currentImageIndex = (currentImageIndex + 1) % images.length;
             productImage.src = images[currentImageIndex];
         }
     }
 
-    // Rotate the image every 3 seconds when hovered
+    // Start switching images when the mouse enters
     item.addEventListener('mouseenter', () => {
         if (images.length > 1) {
-            rotationInterval = setInterval(rotateImage, 3000);
+            imageSwitchInterval = setInterval(switchImage, 1000); // Switch every 1 second
         }
     });
 
-    // Stop rotating when mouse leaves
+    // Stop switching images when the mouse leaves
     item.addEventListener('mouseleave', () => {
-        clearInterval(rotationInterval);
+        clearInterval(imageSwitchInterval);
     });
-});
-
-// Attach click event listener to all heart icons
-document.querySelectorAll('.heart-icon').forEach((icon) => {
-    icon.addEventListener('click', addToFavorites);
 });
