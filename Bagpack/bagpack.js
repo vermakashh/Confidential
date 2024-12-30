@@ -15,26 +15,22 @@ function addToFavorites(event) {
 document.querySelectorAll('.product-item').forEach((item) => {
     const images = item.getAttribute('data-images') ? item.getAttribute('data-images').split(',') : [];
     let currentImageIndex = 0;
-    const productImage = item.querySelector('.product-image');
+    const productImage = item.querySelector('.product-image'); // Specific product image for hover
     let imageSwitchInterval;
 
-    // Function to switch the image
-    function switchImage() {
+    // Start switching images when the mouse enters the image of this product
+    productImage.addEventListener('mouseenter', () => {
         if (images.length > 1) {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            productImage.src = images[currentImageIndex];
-        }
-    }
-
-    // Start switching images when the mouse enters
-    item.addEventListener('mouseenter', () => {
-        if (images.length > 1) {
-            imageSwitchInterval = setInterval(switchImage, 1000); // Switch every 1 second
+            imageSwitchInterval = setInterval(() => {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                productImage.src = images[currentImageIndex]; // Change only the hovered product's image
+            }, 1000); // Switch every 1 second for the hovered product
         }
     });
 
-    // Stop switching images when the mouse leaves
-    item.addEventListener('mouseleave', () => {
-        clearInterval(imageSwitchInterval);
+    // Stop switching images when the mouse leaves the image of this product
+    productImage.addEventListener('mouseleave', () => {
+        clearInterval(imageSwitchInterval); // Stop the image switch when mouse leaves
+        productImage.src = images[0]; // Reset to the first image when the mouse leaves
     });
 });
