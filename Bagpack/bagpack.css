@@ -109,57 +109,6 @@ header h1 {
     color: #666;
 }
 
-/* Add this CSS to control the transition behavior */
-.product-image {
-    transition: none;  /* Disable transition by default */
-}
-
-/* Disable transition by default */
-.product-image {
-    transition: none;  /* No transition initially */
-}
-
-/* Only enable transition when hovering over a specific product item */
-.product-item:hover .product-image {
-    transition: opacity 0.3s ease-in-out;  /* Smooth fade effect when hovered */
-}
-
-/* Optional: A quick reset for the image to not transition when the hover ends */
-.product-item .product-image {
-    transition: opacity 0.3s ease-in-out;  /* Smooth transition on hover */
-}
-
-/* For the rotating images when mouse is hovered over, enable specific behavior */
-.product-item:hover .product-image {
-    opacity: 1; /* Ensure the image is fully visible when hovered */
-}
-
-/* Ensure product image is visible and accessible */
-.product-image {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-/* Ensure hover effects are smooth and specific to the product image */
-.product-item {
-    position: relative;
-}
-
-.product-item:hover .product-image {
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-    transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
-}
-
-/* Ensure heart icon hover does not interfere with image hover */
-.heart-icon:hover {
-    background-color: rgba(255, 0, 0, 0.7);
-    transition: background-color 0.3s;
-}
-
-
-
 /* Heart Icon */
 .heart-icon {
     position: absolute;
