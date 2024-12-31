@@ -11,32 +11,33 @@ function addToFavorites(event) {
     }
 }
 
-// Switch product images on hover - Only for the hovered product
+// Switch product images on hover
 document.querySelectorAll('.product-item').forEach((item) => {
     const images = item.getAttribute('data-images') ? item.getAttribute('data-images').split(',') : [];
     let currentImageIndex = 0;
-    const productImage = item.querySelector('.product-image'); // Specific product image for hover
+    const productImage = item.querySelector('.product-image');
     let imageSwitchInterval;
 
-    // Start switching images when the mouse enters the image of this product
-    productImage.addEventListener('mouseenter', () => {
+    // Function to switch the image
+    function switchImage() {
         if (images.length > 1) {
-            // Enable transition when hovering
-            productImage.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease'; 
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            productImage.src = images[currentImageIndex];
+        }
+    }
 
-            imageSwitchInterval = setInterval(() => {
-                currentImageIndex = (currentImageIndex + 1) % images.length;
-                productImage.src = images[currentImageIndex]; // Change only the hovered product's image
-            }, 1000); // Switch every 1 second for the hovered product
+    // Start switching images when the mouse enters the product item
+    item.addEventListener('mouseenter', () => {
+        if (images.length > 1) {
+            clearInterval(imageSwitchInterval); // Ensure no duplicate intervals
+            imageSwitchInterval = setInterval(switchImage, 1000); // Switch every 1 second
         }
     });
 
-    // Stop switching images when the mouse leaves the image of this product
-    productImage.addEventListener('mouseleave', () => {
-        clearInterval(imageSwitchInterval); // Stop the image switch when mouse leaves
-        productImage.src = images[0]; // Reset to the first image when the mouse leaves
-
-        // Disable transition when no longer hovering
-        productImage.style.transition = 'none'; 
+    // Stop switching images when the mouse leaves the product item
+    item.addEventListener('mouseleave', () => {
+        clearInterval(imageSwitchInterval);
+        currentImageIndex = 0; // Reset to the first image
+        productImage.src = images[0]; // Show the original image
     });
 });
