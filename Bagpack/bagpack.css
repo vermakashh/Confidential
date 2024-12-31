@@ -134,19 +134,30 @@ header h1 {
     opacity: 1; /* Ensure the image is fully visible when hovered */
 }
 
-/* Optional: Add a shadow effect or a slight zoom on hover */
-.product-item:hover .product-image {
-    transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: add shadow effect */
-}
-
-
 /* Ensure product image is visible and accessible */
 .product-image {
     display: block;
     width: 100%;
     height: auto;
 }
+
+/* Ensure hover effects are smooth and specific to the product image */
+.product-item {
+    position: relative;
+}
+
+.product-item:hover .product-image {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+/* Ensure heart icon hover does not interfere with image hover */
+.heart-icon:hover {
+    background-color: rgba(255, 0, 0, 0.7);
+    transition: background-color 0.3s;
+}
+
 
 
 /* Heart Icon */
