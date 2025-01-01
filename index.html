@@ -500,7 +500,7 @@ document.addEventListener('DOMContentLoaded', () => {
  <script>
     // Load navbar dynamically
     document.addEventListener("DOMContentLoaded", function () {
-      fetch("navbar/navbar.html")
+      fetch("../navbar/navbar.html")
         .then(response => response.text())
         .then(data => {
           document.getElementById("navbar-placeholder").innerHTML = data;
