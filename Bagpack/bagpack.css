@@ -33,11 +33,6 @@ body {
     cursor: pointer;
 }
 
-.product-item:hover {
-    transform: scale(1.02); /* Slight zoom effect on hover */
-    transition: transform 0.3s ease-in-out;
-}
-
 .product-item img {
     width: 100%;
     height: auto;
