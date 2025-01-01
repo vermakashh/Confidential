@@ -1,12 +1,14 @@
-function loadNavbar(navbarPlaceholderId, navbarPath) {
-  // Load the navbar dynamically
+function loadNavbar(placeholderId, navbarPath) {
   fetch(navbarPath)
-    .then(response => response.text())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Failed to fetch navbar: ${response.status}`);
+      }
+      return response.text();
+    })
     .then(data => {
-      document.getElementById(navbarPlaceholderId).innerHTML = data;
-
-      // Re-initialize navbar JavaScript
-      initializeNavbar();
+      document.getElementById(placeholderId).innerHTML = data;
+      initializeNavbar(); // Reinitialize navbar JavaScript functionality
     })
     .catch(error => console.error("Error loading navbar:", error));
 }
@@ -18,7 +20,7 @@ function initializeNavbar() {
   if (searchIcon && searchBar) {
     searchIcon.addEventListener("click", () => {
       searchBar.classList.toggle("active");
-      searchBar.focus(); // Focus on the input when it opens
+      searchBar.focus();
     });
   } else {
     console.error("Navbar elements not found!");
