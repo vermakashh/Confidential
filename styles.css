@@ -497,6 +497,30 @@ video {
   color: #333;
 }
 
+/* Close Button Styling */
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  color: #ff0000; /* Optional: Change color on hover */
+}
+
+.material-icons {
+  font-size: 24px; /* Adjust size as needed */
+}
+
+
 .form-container {
   padding: 20px;
 }
