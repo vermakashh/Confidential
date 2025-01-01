@@ -128,15 +128,13 @@
     </div>
   </footer>   
 
+  <script src="../navbar/navbar.js"></script>
   <script>
-    // Load Navbar Dynamically
     document.addEventListener("DOMContentLoaded", function () {
-      fetch("../navbar/navbar.html")
-        .then(response => response.text())
-        .then(data => document.getElementById("navbar-placeholder").innerHTML = data)
-        .catch(error => console.error("Error loading navbar:", error));
+      loadNavbar("navbar-placeholder", "navbar/navbar.html");
     });
-
+  </script>
+  <script>
     // Form Submission Alert
     document.getElementById('contact-form').addEventListener('submit', function (e) {
       e.preventDefault();
